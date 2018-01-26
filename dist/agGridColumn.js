@@ -19,8 +19,9 @@ var AgGridColumn = (function () {
         return colDef;
     };
     AgGridColumn.prototype.getChildColDefs = function (childColumns) {
+        var _this = this;
         return childColumns
-            .filter(function (column) { return !column.hasChildColumns(); })
+            .filter(function (column) { return column !== _this; })
             .map(function (column) {
             return column.toColDef();
         });

@@ -36,7 +36,7 @@ export class AgGridColumn {
     private getChildColDefs(childColumns: QueryList<AgGridColumn>) {
         return childColumns
         // necessary because of https://github.com/angular/angular/issues/10098
-            .filter(column => !column.hasChildColumns())
+            .filter( (column) => { return column !== this })
             .map((column: AgGridColumn) => {
                 return column.toColDef();
             });
