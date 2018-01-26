@@ -29,22 +29,22 @@ var AgGridModule = (function () {
             ],
         };
     };
+    AgGridModule.decorators = [
+        { type: core_1.NgModule, args: [{
+                    imports: [],
+                    declarations: [
+                        agGridNg2_1.AgGridNg2,
+                        agGridColumn_1.AgGridColumn
+                    ],
+                    exports: [
+                        agGridNg2_1.AgGridNg2,
+                        agGridColumn_1.AgGridColumn
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    AgGridModule.ctorParameters = function () { return []; };
     return AgGridModule;
 }());
-AgGridModule.decorators = [
-    { type: core_1.NgModule, args: [{
-                imports: [],
-                declarations: [
-                    agGridNg2_1.AgGridNg2,
-                    agGridColumn_1.AgGridColumn
-                ],
-                exports: [
-                    agGridNg2_1.AgGridNg2,
-                    agGridColumn_1.AgGridColumn
-                ]
-            },] },
-];
-/** @nocollapse */
-AgGridModule.ctorParameters = function () { return []; };
 exports.AgGridModule = AgGridModule;
 //# sourceMappingURL=aggrid.module.js.map

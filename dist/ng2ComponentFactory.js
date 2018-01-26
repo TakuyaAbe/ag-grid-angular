@@ -79,15 +79,15 @@ var Ng2ComponentFactory = (function (_super) {
         var factory = this._componentFactoryResolver.resolveComponentFactory(componentType);
         return viewContainerRef.createComponent(factory);
     };
+    Ng2ComponentFactory.decorators = [
+        { type: core_1.Injectable },
+    ];
+    /** @nocollapse */
+    Ng2ComponentFactory.ctorParameters = function () { return [
+        { type: core_1.ComponentFactoryResolver, },
+    ]; };
     return Ng2ComponentFactory;
 }(baseComponentFactory_1.BaseComponentFactory));
-Ng2ComponentFactory.decorators = [
-    { type: core_1.Injectable },
-];
-/** @nocollapse */
-Ng2ComponentFactory.ctorParameters = function () { return [
-    { type: core_1.ComponentFactoryResolver, },
-]; };
 exports.Ng2ComponentFactory = Ng2ComponentFactory;
 var BaseGuiComponent = (function () {
     function BaseGuiComponent() {

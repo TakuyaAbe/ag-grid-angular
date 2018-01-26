@@ -66,16 +66,16 @@ var Ng2FrameworkComponentWrapper = (function (_super) {
         var factory = this.componentFactoryResolver.resolveComponentFactory(componentType);
         return this.viewContainerRef.createComponent(factory);
     };
+    Ng2FrameworkComponentWrapper.decorators = [
+        { type: core_1.Injectable },
+    ];
+    /** @nocollapse */
+    Ng2FrameworkComponentWrapper.ctorParameters = function () { return []; };
+    Ng2FrameworkComponentWrapper = __decorate([
+        main_1.Bean("frameworkComponentWrapper")
+    ], Ng2FrameworkComponentWrapper);
     return Ng2FrameworkComponentWrapper;
 }(ag_grid_1.BaseComponentWrapper));
-Ng2FrameworkComponentWrapper.decorators = [
-    { type: core_1.Injectable },
-];
-/** @nocollapse */
-Ng2FrameworkComponentWrapper.ctorParameters = function () { return []; };
-Ng2FrameworkComponentWrapper = __decorate([
-    main_1.Bean("frameworkComponentWrapper")
-], Ng2FrameworkComponentWrapper);
 exports.Ng2FrameworkComponentWrapper = Ng2FrameworkComponentWrapper;
 var BaseGuiComponent = (function () {
     function BaseGuiComponent() {
