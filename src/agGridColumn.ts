@@ -45,7 +45,7 @@ export class AgGridColumn {
     private createColDefFromGridColumn(from: AgGridColumn): ColDef {
         let colDef: ColDef = {};
         Object.assign(colDef, from);
-        delete (<any>colDef).childColumns;
+        // delete (<any>colDef).childColumns;
         return colDef;
     };
 

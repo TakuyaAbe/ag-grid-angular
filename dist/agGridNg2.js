@@ -332,10 +332,8 @@ var AgGridNg2 = (function () {
             }
         };
         if (this.columns && this.columns.length > 0) {
-            this.gridOptions.columnDefs = this.columns
-                .map(function (column) {
-                return column.toColDef();
-            });
+            this.gridOptions.getColDef = this.getColDef;
+            this.getColDef();
         }
         new main_1.Grid(this._nativeElement, this.gridOptions, this.gridParams);
         if (this.gridOptions.api) {
@@ -346,6 +344,13 @@ var AgGridNg2 = (function () {
         }
         this._initialised = true;
     };
+    AgGridNg2.prototype.getColDef = function() {
+        this.gridOptions.columnDefs = this.columns
+            .map(function (column) {
+            return column.toColDef();
+        });
+    }
+
     AgGridNg2.prototype.ngOnChanges = function (changes) {
         if (this._initialised) {
             main_1.ComponentUtil.processOnChange(changes, this.gridOptions, this.api, this.columnApi);

@@ -76,10 +76,8 @@ export class AgGridNg2 implements AfterViewInit {
         };
 
         if (this.columns && this.columns.length > 0) {
-            this.gridOptions.columnDefs = this.columns
-                .map((column: AgGridColumn) => {
-                    return column.toColDef();
-                });
+            this.gridOptions.getColDef = this.getColDef;
+            this.getColDef();
         }
 
         new Grid(this._nativeElement, this.gridOptions, this.gridParams);
@@ -93,6 +91,14 @@ export class AgGridNg2 implements AfterViewInit {
         }
 
         this._initialised = true;
+    }
+
+    public getColDef() {
+        const colDefs = this.columns
+        .map((column: AgGridColumn) => {
+            return column.toColDef();
+        });
+        this.gridOptions.columnDefs = colDefs;
     }
 
     public ngOnChanges(changes: any): void {

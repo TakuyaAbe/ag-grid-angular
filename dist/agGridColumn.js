@@ -30,7 +30,7 @@ var AgGridColumn = (function () {
     AgGridColumn.prototype.createColDefFromGridColumn = function (from) {
         var colDef = {};
         Object.assign(colDef, from);
-        delete colDef.childColumns;
+        // delete colDef.childColumns;
         return colDef;
     };
     ;
