@@ -332,8 +332,8 @@ var AgGridNg2 = (function () {
             }
         };
         if (this.columns && this.columns.length > 0) {
-            this.gridOptions.getColDef = this.getColDef;
-            this.getColDef();
+            this.gridOptions.getColDef = this.getColDef.bind(this);
+            this.gridOptions.columnDefs = this.getColDef();
         }
         new main_1.Grid(this._nativeElement, this.gridOptions, this.gridParams);
         if (this.gridOptions.api) {
@@ -345,7 +345,7 @@ var AgGridNg2 = (function () {
         this._initialised = true;
     };
     AgGridNg2.prototype.getColDef = function() {
-        this.gridOptions.columnDefs = this.columns
+        return this.columns
             .map(function (column) {
             return column.toColDef();
         });
